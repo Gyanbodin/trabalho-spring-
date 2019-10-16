@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Inserir</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+  
+  <nav class="navbar navbar-expand-lg navbar-dark text-uppercase bg-dark static-top">
+    <div class="container">
+     <a class="navbar-brand" href="#">Sapataria</a>
+      <button class="navbar-toggler navbar-toggler-right text-uppercase font-weight-bold bg-primary text-white rounded" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        Menu
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+  </nav>
+  <form method="POST" th:object="${}">
+  <center><h1 class="mt-5">Cadastro de Sapatos</h1>
+  <p class="lead"></p><div class="form-group">
+    <label class="col-md-2 control-label" for="Nome">Preço</label>  
+    <div class="col-md-2">
+    <input class="form-control input-md" required="" type="text" maxlength="11" th:field="*{}">
+    </div>
+    <label class="col-md-1 control-label" for="Nome">Marca</label>  
+    <div class="col-md-2">
+    <input class="form-control input-md" required="" type="text" maxlength="10" onBlur="showhide()" th:field="*{}">  
+  </div>
+  </div>
+  <label class="col-md-1 control-label" for="Nome">Tamanho</label>  
+  <div class="col-md-2">
+  <input class="form-control input-md" placeholder="" required="" type="text" maxlength="10" onBlur="showhide()" th:field="*{}"><br>
+  <button type="button" class="btn btn-success">Inserir</button>  
+  </div>
+</p></center>
+</form>
+<table border="1px">
+  <tr>
+    <th>Id</th>
+    <th>Preço</th>
+    <th>Marca</th>
+    <th>Tamanho</th>
+  </tr>
+<tr th:each="t : ${times}">
+    <td th:text=${t.id}>1</td>
+    <td th:text="${t.preço}">50</td> 
+    <td th:text="${t.marca}">ipanema</td>
+    <td th:text="${t.tamanho}">1231213</td>  	
+    <td><a class="btn btn-outline-danger" th:href="@{/delete/{id}(id=${t.id})}">Excluir</a></td>	
+    <td><a th:href="@{/editar/{id}(id=${t.id})}">Editar</a></td>
+  </tr>
+</table>
+
+</div>
+</div>
+</div>
+
+
+
+
+
+
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.slim.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>

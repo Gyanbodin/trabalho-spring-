@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Implementation-Title: GestaoDeConvidados
+Implementation-Version: 1
+Built-By: Aluno
+Implementation-Vendor-Id: com.eeep
+Build-Jdk: 1.8.0_31
+Implementation-URL: https://projects.spring.io/spring-boot/#/spring-bo
+ ot-starter-parent/GestaoDeConvidados
+Created-By: Maven Integration for Eclipse
+
